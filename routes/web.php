@@ -18,7 +18,6 @@ $router->get('register','UserController@register');
 $router->post('login',['as'=>'login','uses'=>'UserController@login']);
 
 
-
 $router->group(['middleware' => 'auth'], function () use ($router) {
 
 	$router->post('create',['as'=>'create','uses'=>'UserController@create']);

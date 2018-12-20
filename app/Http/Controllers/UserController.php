@@ -14,19 +14,34 @@ class UserController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        
     }
 
     public function login(Request $request){	
 
+    	$this->validate($request, [
+        'firstName' => 'required',
+        'lastName' => 'required',
+        'email' => 'required|email|unique:users',
+        'password'=>'required'
+   		 ]);
+
+    	 $credentials = $request->only(['email','password']);
+
+    	 Auth::attempt($credentials) ? view('dashboard') : view('login')->with(['error'=>'Login failed'])
+    	 if () {
+            return'logged in';
+        } else {
+            return 'not logged in';
+        }
     	return $request->all();
 
     }
 
     public function register(){
 
-    	return view('add-user');
-
+    	return Auth::check() ? view('add-user') : view('login');
+    	
     }
 
     public function create(Request $request){
