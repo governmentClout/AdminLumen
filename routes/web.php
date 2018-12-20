@@ -14,3 +14,4 @@
 $router->get('/', 'HomeController@home');
 
 $router->post('login',['as'=>'login','UserController@login']);
+
