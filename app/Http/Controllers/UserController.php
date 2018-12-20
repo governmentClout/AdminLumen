@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 //Admin User Things, authentication, add new, etc
 
-class ExampleController extends Controller
+class UserController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -16,5 +16,5 @@ class ExampleController extends Controller
         //
     }
 
-    //
+   
 }

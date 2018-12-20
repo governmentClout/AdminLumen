@@ -9,7 +9,7 @@
                 <h2>Sign In</h2>
             </div>
             <div class="auth-form">
-                <form>
+                <form method="post" action="{{route('login')}}">
                     <div class="form-group">
                         <label for="email">Email address</label>
                         <div class="input-group">
