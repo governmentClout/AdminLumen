@@ -16,6 +16,13 @@ $router->get('login','HomeController@home');
 $router->get('register','UserController@register');
 
 $router->post('login',['as'=>'login','uses'=>'UserController@login']);
-$router->post('create',['as'=>'create','uses'=>'UserController@create']);
+
+
+
+$router->group(['middleware' => 'auth'], function () use ($router) {
+
+	$router->post('create',['as'=>'create','uses'=>'UserController@create']);
+
+});
 
 

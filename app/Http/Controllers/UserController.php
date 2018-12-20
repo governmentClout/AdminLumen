@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-//Admin User Things, authentication, add new, etc
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -15,7 +14,7 @@ class UserController extends Controller
      */
     public function __construct()
     {
-        //
+        $this->middleware('auth');
     }
 
     public function login(Request $request){	
@@ -25,7 +24,9 @@ class UserController extends Controller
     }
 
     public function register(){
+
     	return view('add-user');
+
     }
 
     public function create(Request $request){
