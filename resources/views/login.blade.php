@@ -13,7 +13,7 @@
                     <div class="form-group">
                         <label for="email">Email address</label>
                         <div class="input-group">
-                            <input type="email" class="form-control" required placeholder="Email address">
+                            <input name="email" type="email" class="form-control" required placeholder="Email address">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="material-icons">email</i></span>
                             </div>
@@ -22,7 +22,7 @@
                     <div class="form-group">
                         <label for="password">Password</label>
                         <div class="input-group">
-                            <input type="password" class="form-control" required placeholder="Password">
+                            <input name="password" type="password" class="form-control" required placeholder="Password">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="material-icons">lock</i></span>
                             </div>

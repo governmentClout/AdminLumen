@@ -19,10 +19,9 @@ class HomeController extends Controller
     }
 
     public function home(){
-    	//check authentication here and return to right place if user is authenticated or note
 
     	if(Auth::user()) return view('dashboard');
-    	return view('auth');
+    	return view('login');
     }
 
    
