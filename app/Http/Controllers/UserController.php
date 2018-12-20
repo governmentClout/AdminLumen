@@ -24,5 +24,13 @@ class UserController extends Controller
 
     }
 
+    public function register(){
+    	return view('add-user');
+    }
+
+    public function create(Request $request){
+    	return $request->all();
+    }
+
    
 }

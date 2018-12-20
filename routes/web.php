@@ -12,6 +12,10 @@
 */
 
 $router->get('/', 'HomeController@home');
+$router->get('login','HomeController@home');
+$router->get('register','UserController@register');
 
 $router->post('login',['as'=>'login','uses'=>'UserController@login']);
+$router->post('create',['as'=>'create','uses'=>'UserController@create']);
+
 
