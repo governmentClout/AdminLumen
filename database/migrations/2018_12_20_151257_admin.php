@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class User extends Migration
+class Admin extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class User extends Migration
      */
     public function up()
     {
-        Schema::create('users',function(Blueprint $table){
+        Schema::create('admin',function(Blueprint $table){
 
             $table->increments('id');
-            $table->increments('uuid');
+            $table->string('uuid');
             $table->string('email');
             $table->string('firstName');
             $table->string('lastName');
             $table->string('password');
-            $table->string('status')->default(0)
-            $table->timestampes();
+            $table->string('status')->default(0);
+            $table->timestamps();
 
         });
     }
@@ -34,6 +34,6 @@ class User extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
+        Schema::drop('admin');
     }
 }
