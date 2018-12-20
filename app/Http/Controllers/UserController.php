@@ -20,20 +20,14 @@ class UserController extends Controller
     public function login(Request $request){	
 
     	$this->validate($request, [
-        'firstName' => 'required',
-        'lastName' => 'required',
         'email' => 'required|email|unique:users',
         'password'=>'required'
    		 ]);
 
     	 $credentials = $request->only(['email','password']);
 
-    	 Auth::attempt($credentials) ? view('dashboard') : view('login')->with(['error'=>'Login failed'])
-    	 if () {
-            return'logged in';
-        } else {
-            return 'not logged in';
-        }
+    	 Auth::attempt($credentials) ? view('dashboard') : redirect()->route('login')->with(['error'=>'Login failed'])
+    	
     	return $request->all();
 
     }
@@ -45,6 +39,14 @@ class UserController extends Controller
     }
 
     public function create(Request $request){
+
+    	$this->validate($request, [
+        'firstName' => 'required',
+        'lastName' => 'required',
+        'email' => 'required|email|unique:users',
+        'password'=>'required'
+   		 ]);
+
     	return $request->all();
     }
 
